@@ -12,7 +12,8 @@ class EmployeeFilter(django_filters.filterset):
     
     class Meta:
         model = Employee
-        fields = ['designation', 'emp_name']
+        # this line is used for showing the filter form into the drf page in frontend
+        fields = ['designation', 'emp_name','id_name','id_max']
         
     # now filter according to the range 
     
