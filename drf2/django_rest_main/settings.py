@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'students',
     'rest_framework',
     'api',
+    'employees',
+    'blog',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +54,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    # used for page only 
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10,
+    # this is for filter 
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
+
 
 ROOT_URLCONF = 'django_rest_main.urls'
 
